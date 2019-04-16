@@ -40,13 +40,18 @@
             <a href="/cart.php" class="btn btn-warning navbar-btn">
               <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
               Cart
-            </a>
+            </a>  
+          </li>
+          <li>
+            <form role="form" action="index.php" method="POST">
+              <input type="submit" class="btn btn-lg btn-primary btn-block" name="Sign_out" value="Sign out">
+             </form>    
           </li>
         </ul>
-      </div><!-- /.navbar-collapse -->
+      </div><!-- /.navbar-collapse -->         
     </div><!-- /.container-fluid -->
   </nav>
   <div class="container-fluid text-right">
-    <strong>Hello Wilder !</strong>
+    <strong><?=  $_SESSION['name']??'' ?></strong>
   </div>
 </header>

@@ -1,4 +1,23 @@
-<?php require 'inc/head.php'; ?>
+<?php 
+session_start();
+if (empty($_SESSION)){
+ // action si condition est rempli
+  header('Location: /login.php');
+}
+
+
+ if($_SERVER['REQUEST_METHOD'] == 'POST'){
+  session_destroy();
+}
+
+
+if (!empty($_GET['add_to_cart'])) {
+  $_SESSION['articles'][] = $_GET['add_to_cart'];
+}
+
+
+
+require 'inc/head.php'; ?>
 <section class="cookies container-fluid">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
